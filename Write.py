@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 03 16:21:55 2017
+
+@author: Administrator
+"""
+
 from docx import Document
 from docx.shared import Pt
 from docx.shared import Inches
@@ -11,6 +18,8 @@ ehead = 'A-share profit statement Net profit (including minority gains and losse
 ref = 'A股利润表中的净利润(含少数股东损益)字段'
 factor = ['LZ_CN_STKA_PRF_COMBO_NET_PRFT_INCL_MIN_INT_INC']
 label = ['合并报表']
+datatype = 'INT整型'
+
 
 paragraph = document.add_paragraph()
 run = paragraph.add_run(unicode(chead, "utf-8"))
@@ -96,11 +105,138 @@ paragraph.paragraph_format.left_indent = Inches(0.75)
 r = run._element
 r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
 
+paragraph = document.add_paragraph()
+run = paragraph.add_run(u'二、因子格式：')
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(u'1.  基本格式：二维类型因子')
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('2.  数据类型：'+datatype, "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('3.  数据单位：无', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('4.  行列索引：', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('1)	行索引：LZ_CN_STKA_EXCH_CAL(A股交易日历)\n', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+run = paragraph.add_run(unicode('2)	列索引：LZ_CN_STKA_CODE(A股股票代码)', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('5.  标识说明：', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('0: 全天停牌或未上市或已退市或未在成分股中\n', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+run = paragraph.add_run(unicode('1: 在成分股中且未退市且没有全天停牌', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(u'三、	算法说明：')
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('无', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.5)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(u'四、	获取与使用代码示例：')
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('1.	获取渠道：PythonSDK、MatlabSDK、读取h5文件\n', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+run = paragraph.add_run(unicode('2.	PythonSDK代码示例\n', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+document.add_picture("python_strategy.jpg", width=Inches(6.5))
+
+paragraph = document.add_paragraph()
+run = paragraph.add_run(unicode('3.	MatlabSDK代码示例', "utf-8"))
+run.font.size = Pt(10.5)
+run.font.name=u'宋体' 
+paragraph.paragraph_format.left_indent = Inches(0.75)
+r = run._element
+r.rPr.rFonts.set(qn('w:eastAsia'), u'宋体')
+
+document.add_picture("matlab_strategy.jpg", width=Inches(6.5))
+
+
 
 name = chead+'.docx'
 document.save(unicode(name, "utf-8"))
-
-
-
 #document.add_heading(u'一级标题',1)
 #document.add_heading(u'二级标题',2)
